@@ -1,5 +1,8 @@
 # How to Install
 
+THIS IS A TEST FORK THAT IS BEING USED TO RAPIDLY TEST HACS COMPLIANT FORMATTING PRIOR TO MAKING A PR ON THE MAIN PROJECT
+THE MAIN PROJECT IS AT https://github.com/micro-nova/AmpliPi-HomeAssistant-Card
+
 **This custom card requires Mini Media Player!** Before installing the AmpliPi custom cards, [download and install Mini Media Player](https://github.com/kalkih/mini-media-player). You also need to have the [main AmpliPi Home Assistant integration](https://github.com/micro-nova/hacs_amplipi/) in order for this card to function properly.
 
 The rest of the guide assumes that Mini Media Player is fully installed.
