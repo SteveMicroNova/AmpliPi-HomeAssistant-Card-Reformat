@@ -584,12 +584,12 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"8lqZg":[function(require,module,exports) {
-var _groupCard = require("../group-card");
-var _groupCardEditor = require("../group-card-editor");
-var _zoneCard = require("../src/zone-card");
-var _zoneCardEditor = require("../src/zone-card-editor");
-var _sourceCard = require("../src/source-card");
-var _sourceCardEditor = require("../src/source-card-editor");
+var _groupCard = require("./group-card");
+var _groupCardEditor = require("./group-card-editor");
+var _zoneCard = require("./zone-card");
+var _zoneCardEditor = require("./zone-card-editor");
+var _sourceCard = require("./source-card");
+var _sourceCardEditor = require("./source-card-editor");
 customElements.define("amplipi-group-card", (0, _groupCard.AmplipiGroupCard));
 customElements.define("amplipi-group-card-editor", (0, _groupCardEditor.AmplipiGroupCardEditor));
 window.customCards = window.customCards || [];
@@ -619,7 +619,7 @@ window.customCards.push({
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "AmplipiGroupCard", ()=>AmplipiGroupCard);
-var _commonAmplipiCard = require("../common-amplipi-card");
+var _commonAmplipiCard = require("./common-amplipi-card");
 const LitElement = Object.getPrototypeOf(customElements.get("ha-panel-lovelace"));
 const html = LitElement.prototype.html;
 class AmplipiGroupCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
@@ -935,7 +935,7 @@ class CommonAmplipiCard extends LitElement {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "AmplipiGroupCardEditor", ()=>AmplipiGroupCardEditor);
-var _commonAmplipiEditor = require("../common-amplipi-editor");
+var _commonAmplipiEditor = require("./common-amplipi-editor");
 const LitElement = Object.getPrototypeOf(customElements.get("ha-panel-lovelace"));
 const html = LitElement.prototype.html;
 class AmplipiGroupCardEditor extends (0, _commonAmplipiEditor.CommonAmplipiCardEditor) {
@@ -1040,7 +1040,7 @@ class CommonAmplipiCardEditor extends LitElement {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "AmplipiZoneCard", ()=>AmplipiZoneCard);
-var _commonAmplipiCard = require("../common-amplipi-card");
+var _commonAmplipiCard = require("./common-amplipi-card");
 const LitElement = Object.getPrototypeOf(customElements.get("ha-panel-lovelace"));
 const html = LitElement.prototype.html;
 class AmplipiZoneCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
@@ -1121,7 +1121,7 @@ class AmplipiZoneCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "AmplipiZoneCardEditor", ()=>AmplipiZoneCardEditor);
-var _commonAmplipiEditor = require("../common-amplipi-editor");
+var _commonAmplipiEditor = require("./common-amplipi-editor");
 const LitElement = Object.getPrototypeOf(customElements.get("ha-panel-lovelace"));
 const html = LitElement.prototype.html;
 class AmplipiZoneCardEditor extends (0, _commonAmplipiEditor.CommonAmplipiCardEditor) {
@@ -1156,7 +1156,7 @@ class AmplipiZoneCardEditor extends (0, _commonAmplipiEditor.CommonAmplipiCardEd
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "AmplipiSourceCard", ()=>AmplipiSourceCard);
-var _commonAmplipiCard = require("../common-amplipi-card");
+var _commonAmplipiCard = require("./common-amplipi-card");
 const LitElement = Object.getPrototypeOf(customElements.get("ha-panel-lovelace"));
 const html = LitElement.prototype.html;
 class AmplipiSourceCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
@@ -1274,7 +1274,7 @@ class AmplipiSourceCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "AmplipiSourceCardEditor", ()=>AmplipiSourceCardEditor);
-var _commonAmplipiEditor = require("../common-amplipi-editor");
+var _commonAmplipiEditor = require("./common-amplipi-editor");
 const LitElement = Object.getPrototypeOf(customElements.get("ha-panel-lovelace"));
 const html = LitElement.prototype.html;
 class AmplipiSourceCardEditor extends (0, _commonAmplipiEditor.CommonAmplipiCardEditor) {
