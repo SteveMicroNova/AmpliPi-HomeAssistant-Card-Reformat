@@ -86,7 +86,7 @@ export class AmplipiZoneCard extends CommonAmplipiCard {
                 "artwork": "cover",
                 "source": "icon",
                 "hide": {
-                    
+                    "power": "true",
                     "controls": "true",
                     "source": "true",
                 }

@@ -703,7 +703,7 @@ class AmplipiGroupCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
                 "group": "true",
                 "source": "icon",
                 "hide": {
-                    
+                    "power": "true",
                     "controls": "true",
                     "info": "true",
                     "icon": "true",
@@ -737,7 +737,7 @@ class AmplipiGroupCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
                 "artwork": "cover",
                 "source": "icon",
                 "hide": {
-                    
+                    "power": "true",
                     "controls": "true",
                     "source": "true"
                 }
@@ -831,7 +831,7 @@ class CommonAmplipiCard extends LitElement {
                 "controls": "true",
                 "info": "true",
                 "name": "true",
-                
+                "power": "true",
                 "icon": "true"
             }
         };
@@ -862,7 +862,7 @@ class CommonAmplipiCard extends LitElement {
                 "controls": "true",
                 "info": "true",
                 "name": "true",
-                
+                "power": "true",
                 "icon": "true"
             }
         };
@@ -906,7 +906,7 @@ class CommonAmplipiCard extends LitElement {
                 "volume": "true",
                 "info": "true",
                 "name": "true",
-                
+                "power": "true",
                 "icon": "true",
                 "source": "true"
             }
@@ -1099,7 +1099,7 @@ class AmplipiZoneCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
                 "artwork": "cover",
                 "source": "icon",
                 "hide": {
-                    
+                    "power": "true",
                     "controls": "true",
                     "source": "true"
                 }
@@ -1210,7 +1210,7 @@ class AmplipiSourceCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
                 "group": "true",
                 "source": "icon",
                 "hide": {
-                    
+                    "power": "true",
                     "controls": "true",
                     "info": "true",
                     "icon": "true",
@@ -1251,7 +1251,7 @@ class AmplipiSourceCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
                 "hide": {
                     "info": "true",
                     "source": "true",
-                    
+                    "power": "true",
                     "name": "true",
                     "icon": "true",
                     "controls": "true"

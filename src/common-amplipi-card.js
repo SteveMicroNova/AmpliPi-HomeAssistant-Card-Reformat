@@ -48,7 +48,7 @@ export class CommonAmplipiCard extends LitElement {
                 "controls": "true",
                 "info": "true",
                 "name": "true",
-                
+                "power": "true",
                 "icon": "true"
             }
         }
@@ -93,7 +93,7 @@ export class CommonAmplipiCard extends LitElement {
                 "controls": "true",
                 "info": "true",
                 "name": "true",
-                
+                "power": "true",
                 "icon": "true"
             }
         }
@@ -151,7 +151,7 @@ export class CommonAmplipiCard extends LitElement {
                 "volume": "true",
                 "info": "true",
                 "name": "true",
-                
+                "power": "true",
                 "icon": "true",
                 "source": "true"
             }

@@ -134,7 +134,7 @@ export class AmplipiGroupCard extends CommonAmplipiCard {
                 "group": "true",
                 "source": "icon",
                 "hide": {
-                    
+                    "power": "true",
                     "controls": "true",
                     "info": "true",
                     "icon": "true",
@@ -176,7 +176,7 @@ export class AmplipiGroupCard extends CommonAmplipiCard {
                 "artwork": "cover",
                 "source": "icon",
                 "hide": {
-                    
+                    "power": "true",
                     "controls": "true",
                     "source": "true",
                 }
