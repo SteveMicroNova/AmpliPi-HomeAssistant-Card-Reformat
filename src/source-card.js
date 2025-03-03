@@ -72,7 +72,7 @@ export class AmplipiSourceCard extends CommonAmplipiCard {
                 "group": "true",
                 "source": "icon",
                 "hide": {
-                    "power": "true",
+                    
                     "controls": "true",
                     "info": "true",
                     "icon": "true",
@@ -126,7 +126,7 @@ export class AmplipiSourceCard extends CommonAmplipiCard {
                 "hide": {
                     "info": "true",
                     "source": "true",
-                    "power": "true",
+                    
                     "name": "true",
                     "icon": "true",
                     "controls": "true",
