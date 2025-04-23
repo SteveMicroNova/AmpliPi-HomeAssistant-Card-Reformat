@@ -87,6 +87,7 @@ export class AmplipiGroupCard extends CommonAmplipiCard {
         if(!this._hass || !this._config) {
             return html ``;
         }
+        console.log(`this._stream_player: ${this._stream_player}`)
         return html `
         <ha-card header="${this._config.name}" style="padding: 1.5rem;">
         <b>Now Playing:</b> ${
@@ -103,7 +104,7 @@ export class AmplipiGroupCard extends CommonAmplipiCard {
             <b>Source:</b>
             ${this._source_player == undefined ? "" : this._source_player}
             <b>Stream:</b>
-            ${(this._stream_player == undefined || this._stream_player == "None") ? "" : this._stream_player}
+            ${(this._stream_player == undefined || this._stream_player == "None" ) ? "" : this._stream_player}
             <hr>
             ${this._zone_players == undefined ? "" : this._zone_players}
             ${this._controls_player == undefined ? "" : this._controls_player}
@@ -128,7 +129,7 @@ export class AmplipiGroupCard extends CommonAmplipiCard {
         let zone_player_configs = {};
         let zone_players = [];
         for (var zone of zone_names) {
-            if (zone) {
+            if (zone != None) {
                 zone_player_configs.zone = {
                     "type": "custom:mini-media-player",
                     "entity": zone,
