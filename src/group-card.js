@@ -128,32 +128,34 @@ export class AmplipiGroupCard extends CommonAmplipiCard {
         let zone_player_configs = {};
         let zone_players = [];
         for (var zone of zone_names) {
-            zone_player_configs.zone = {
-                "type": "custom:mini-media-player",
-                "entity": zone,
-                "group": "true",
-                "source": "icon",
-                "hide": {
-                    "power": "true",
-                    "controls": "true",
-                    "info": "true",
-                    "icon": "true",
-                    "source": "true",
-                    "icon": "true"
+            if (zone) {
+                zone_player_configs.zone = {
+                    "type": "custom:mini-media-player",
+                    "entity": zone,
+                    "group": "true",
+                    "source": "icon",
+                    "hide": {
+                        "power": "true",
+                        "controls": "true",
+                        "info": "true",
+                        "icon": "true",
+                        "source": "true",
+                        "icon": "true"
+                    }
                 }
-            }
 
-            if(this._config.media_config instanceof Object) {
-                zone_player_configs.zone = {...zone_player_configs.zone, ...this._config.media_config};
+                if(this._config.media_config instanceof Object) {
+                    zone_player_configs.zone = {...zone_player_configs.zone, ...this._config.media_config};
+                }
+    
+                var zone_player;
+                zone_player = this._helpers.createCardElement(zone_player_configs.zone);
+                zone_player.hass = this._hass;
+                zone_players.push(zone_player);
+                this.triggerRender();
+                return zone_players
             }
-
-            var zone_player;
-            zone_player = this._helpers.createCardElement(zone_player_configs.zone);
-            zone_player.hass = this._hass;
-            zone_players.push(zone_player);
-            this.triggerRender();
         }
-        return zone_players
     }
 
     async addMediaPlayer() {
