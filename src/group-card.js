@@ -87,7 +87,7 @@ export class AmplipiGroupCard extends CommonAmplipiCard {
         if(!this._hass || !this._config) {
             return html ``;
         }
-        console.log(`this._stream_player: ${this._stream_player}`)
+        console.log(`this._stream_player: ${this._stream_player}`);
         return html `
         <ha-card header="${this._config.name}" style="padding: 1.5rem;">
         <b>Now Playing:</b> ${
