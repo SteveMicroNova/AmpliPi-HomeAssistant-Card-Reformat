@@ -56,6 +56,7 @@ export class AmplipiSourceCard extends CommonAmplipiCard {
             <b>Stream:</b>
             ${this._source_player == undefined ? "..." : this._source_player}
             <hr>
+            </b>Zones / Groups:</b>
             ${this._zone_players == undefined ? "..." : this._zone_players}
             ${this._controls_player == undefined ? "..." : this._controls_player}
         </ha-card>`;
