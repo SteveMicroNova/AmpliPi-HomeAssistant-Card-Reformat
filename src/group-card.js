@@ -79,6 +79,7 @@ export class AmplipiGroupCard extends CommonAmplipiCard {
             for(var zone of this._zone_players){
                 if(zone) zone.hass = hass;
             }
+            console.log(`this._stream_player: ${this._stream_player}`);
             this.triggerRender();
         }
     }
@@ -87,7 +88,6 @@ export class AmplipiGroupCard extends CommonAmplipiCard {
         if(!this._hass || !this._config) {
             return html ``;
         }
-        console.log(`this._stream_player: ${this._stream_player}`);
         return html `
         <ha-card header="${this._config.name}" style="padding: 1.5rem;">
         <b>Now Playing:</b> ${
