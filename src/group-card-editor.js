@@ -22,13 +22,11 @@ export class AmplipiGroupCardEditor extends CommonAmplipiCardEditor {
         type="text"
         .value=${this._config.name}
         @focusout=${this._nameChanged}
-        style="text-color: #000000;"
         ></input>
 
         <h2>Group</h2>
         <div class="group-select">
             <select
-            style="text-color: #000000;"
             @change=${this._entityChanged}>
             <option value="${this._config.entity}">${this._config.entity == "" || this.hass.states[this._config.entity] == undefined ? "Select a Group" : this.hass.states[this._config.entity].attributes.friendly_name}</option>
             ${
