@@ -15,7 +15,6 @@ export class AmplipiGroupCard extends CommonAmplipiCard {
         this._config = config;
         this._group = config.entity;
         this._num_zones = 0;
-
     }
 
     static getStubConfig() {
@@ -107,7 +106,6 @@ export class AmplipiGroupCard extends CommonAmplipiCard {
             ${(this._stream_player == undefined || this._stream_player == "None" ) ? "" : this._stream_player}
             <hr>
             ${this._zone_players == undefined ? "" : this._zone_players}
-            ${this._controls_player == undefined ? "" : this._controls_player}
         </ha-card>`;
     }
 
