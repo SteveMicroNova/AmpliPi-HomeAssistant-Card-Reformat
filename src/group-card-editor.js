@@ -22,6 +22,7 @@ export class AmplipiGroupCardEditor extends CommonAmplipiCardEditor {
         type="text"
         .value=${this._config.name}
         @focusout=${this._nameChanged}
+        style="text-color: #000000;"
         ></input>
 
         <h2>Group</h2>
