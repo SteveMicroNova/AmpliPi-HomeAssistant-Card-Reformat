@@ -669,6 +669,7 @@ class AmplipiGroupCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
         }
     }
     render() {
+        console.log(`streamer: ${this._stream_player}\nsource: ${this._source_player}`);
         if (!this._hass || !this._config) return html``;
         return html`
         <ha-card header="${this._config.name}" style="padding: 1.5rem;">

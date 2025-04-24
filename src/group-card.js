@@ -84,6 +84,7 @@ export class AmplipiGroupCard extends CommonAmplipiCard {
     }
 
     render() {
+        console.log(`streamer: ${this._stream_player}\nsource: ${this._source_player}`);
         if(!this._hass || !this._config) {
             return html ``;
         }
