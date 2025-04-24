@@ -676,7 +676,7 @@ class AmplipiGroupCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
             - ${this._hass.states[this._group] == undefined ? "" : this._hass.states[this._group].attributes.media_track}
             ${this._media_player == undefined ? "" : this._media_player}
             <br>
-            <b>Source:</b>
+            <b>Sauce:</b>
             ${this._source_player == undefined ? "" : this._source_player}
             <b>Stream:</b>
             ${(this._stream_player == undefined || this._source_player == undefined || this._source_player == "None" ) ? "" : this._stream_player}
