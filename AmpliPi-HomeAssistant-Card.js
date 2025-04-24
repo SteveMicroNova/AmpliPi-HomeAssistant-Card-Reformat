@@ -672,7 +672,8 @@ class AmplipiGroupCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
         if (!this._hass || !this._config) return html``;
         return html`
         <ha-card header="${this._config.name}" style="padding: 1.5rem;">
-        <b>Now Playing:</b> ${this._hass.states[this._group] == undefined ? "" : this._hass.states[this._group].attributes.media_album_artist}
+        <b>Now Playing:</b>
+            ${this._hass.states[this._group] == undefined ? "" : this._hass.states[this._group].attributes.media_album_artist}
             - ${this._hass.states[this._group] == undefined ? "" : this._hass.states[this._group].attributes.media_track}
             ${this._media_player == undefined ? "" : this._media_player}
             <br>
