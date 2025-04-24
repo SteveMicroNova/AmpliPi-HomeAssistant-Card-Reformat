@@ -108,6 +108,8 @@ export class AmplipiGroupCard extends CommonAmplipiCard {
             ${this._zone_players == undefined ? "" : this._zone_players}
         </ha-card>`;
     }
+    
+    // ${this._controls_player == undefined ? "" : this._controls_player}
 
     _findZoneNames() {
         const zone_ids = this._hass.states[this._group].attributes.amplipi_zones;
@@ -134,12 +136,6 @@ export class AmplipiGroupCard extends CommonAmplipiCard {
                     "group": "true",
                     "source": "icon",
                     "hide": {
-                        "power": "true",
-                        "controls": "true",
-                        "info": "true",
-                        "icon": "true",
-                        "source": "true",
-                        "icon": "true"
                     }
                 }
 
