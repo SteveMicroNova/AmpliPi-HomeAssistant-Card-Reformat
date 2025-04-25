@@ -69,6 +69,7 @@ export class CommonAmplipiCard extends LitElement {
             return undefined;
         }
         var source_id;
+        return source
 
         if(!is_source) {
             const source_num = source.split(' ')[1] - 1;

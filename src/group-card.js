@@ -91,13 +91,13 @@ export class AmplipiGroupCard extends CommonAmplipiCard {
         return html `
         <ha-card header="${this._config.name}" style="padding: 1.5rem;">
         <b>Now Playing:</b> 
-            ${ this._hass.states[this._group] == undefined  ? "" : this._hass.states[this._group].attributes.media_album_artist}
+            ${this._hass.states[this._group] == undefined ? "" : this._hass.states[this._group].attributes.media_album_artist}
             - ${this._hass.states[this._group] == undefined ? "" : this._hass.states[this._group].attributes.media_track}
             ${this._media_player == undefined ? "" : this._media_player}
             <br>
-            <b>Sauce:</b>
+            <b>Source:</b>
             ${this._source_player == undefined ? "" : this._source_player}
-            <b>Steam:</b>
+            <b>Stream:</b>
             ${(this._stream_player == undefined || this._source_player == undefined || this._source_player == "None" ) ? "" : this._stream_player}
             <hr>
             ${this._zone_players == undefined ? "" : this._zone_players}
