@@ -103,7 +103,7 @@ export class AmplipiGroupCard extends CommonAmplipiCard {
             <b>Zones:</b>
             ${this._zone_players == undefined ? "" : this._zone_players}
             <b>Controls:</b>
-            ${(this._controls_player == undefined || this._controls_player.entity == undefined) ? "" : this._controls_player}
+            ${(this._controls_player == undefined || this._controls_player.entity == undefined || this._stream_player.entity == undefined) ? "" : this._controls_player}
         </ha-card>`;
     }
 
