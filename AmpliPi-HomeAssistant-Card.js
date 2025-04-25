@@ -681,12 +681,12 @@ class AmplipiGroupCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
             <b>Source:</b>
             ${this._source_player == undefined ? "" : this._source_player}
             <b>Stream:</b>
-            ${(this._stream_player == undefined || this._stream_player.entity == undefined || this._source_player == null || this._source_player == undefined || this._source_player == "None"  ) ? "" : this._stream_player}
+            ${(this._stream_player == undefined || this._stream_player.entity == undefined) ? "" : this._stream_player}
             <hr>
             <b>Zones:</b>
             ${this._zone_players == undefined ? "" : this._zone_players}
             <b>Controls:</b>
-            ${this._controls_player == undefined ? "" : this._controls_player}
+            ${(this._controls_player == undefined || this._controls_player.entity == undefined) ? "" : this._controls_player}
         </ha-card>`;
     }
     _findZoneNames() {
