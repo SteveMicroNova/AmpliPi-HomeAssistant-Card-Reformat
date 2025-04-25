@@ -60,9 +60,9 @@ export class AmplipiZoneCard extends CommonAmplipiCard {
             <br><b>Source:</b>
             ${this._source_player == undefined ? "" : this._source_player}
             <b>Stream:</b>
-            ${this._stream_player == undefined ? "" : this._stream_player}
+            ${(this._stream_player == undefined || this._stream_player.entity == undefined) ? "" : this._stream_player}
             <hr>
-            ${this._controls_player == undefined ? "" : this._controls_player}
+            ${(this._controls_player == undefined || this._controls_player.entity == undefined || this._stream_player.entity == undefined) ? "" : this._controls_player}
         </ha-card>`;
     }
 
