@@ -651,7 +651,7 @@ class AmplipiGroupCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
         if (this._stream_player) this._stream_player.hass = hass;
         if (this._source_player) this._source_player.hass = hass;
         if (this._helpers && this.source != this._hass.states[this._group].attributes.source) {
-            if (this.source) {this._stream_player = this._loadSourcePlayer(this._source, true)} else {this._stream_player = null};
+            if (this.source) {this._stream_player = this._loadSourcePlayer(this._source)} else {this._stream_player = null};
             this._source_player = this._loadAmpliPiSourcePlayer(this._group);
             this._controls_player = this._loadControlsPlayer(this._hass.states[this._group].attributes.source);
         }
@@ -853,8 +853,15 @@ class CommonAmplipiCard extends LitElement {
         var source_id;
         if (!is_source) {
             const source_num = source.split(" ")[1] - 1;
-            for (var [name, entity] of Object.entries(this._hass.states))if (entity.attributes.amplipi_source_id !== undefined && entity.attributes.amplipi_source_id === source_num) source_id = name;
-        } else source_id = source;
+            for (var [name, entity] of Object.entries(this._hass.states)) {
+                if (entity.attributes.amplipi_source_id !== undefined && entity.attributes.amplipi_source_id === source_num) {
+                    source_id = name;
+                }
+            }
+        } else {
+            source_id = source;
+        }
+
         let source_player_config1 = {
             "type": "custom:mini-media-player",
             "entity": source_id,
@@ -869,16 +876,19 @@ class CommonAmplipiCard extends LitElement {
                 "icon": "true"
             }
         };
-        if (this._config.media_config instanceof Object) source_player_config1 = {
-            ...source_player_config1,
-            ...this._config.media_config
-        };
+        if (this._config.media_config instanceof Object) {
+            source_player_config1 = {
+                ...source_player_config1,
+                ...this._config.media_config
+            };
+        }
         var player;
         player = this._helpers.createCardElement(source_player_config1);
         player.hass = this._hass;
         this.triggerRender();
         return player;
     }
+
     _loadControlsPlayer(source, is_source = false) {
         if (source === undefined) {
             this.source = undefined;
@@ -1067,7 +1077,7 @@ class AmplipiZoneCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
         if (this._stream_player) this._stream_player.hass = hass;
         if (this._source_player) this._source_player.hass = hass;
         if (this._helpers && this._hass != undefined && this._hass.states[this._zone] != undefined && this.source != this._hass.states[this._zone].attributes.source) {
-            if (this.source) {this._stream_player = this._loadSourcePlayer(this._source, true)} else {this._stream_player = null};
+            if (this.source) {this._stream_player = this._loadSourcePlayer(this._source)} else {this._stream_player = null};
             this._source_player = this._loadAmpliPiSourcePlayer(this._zone);
             this._controls_player = this._loadControlsPlayer(this._hass.states[this._zone].attributes.source);
         }
