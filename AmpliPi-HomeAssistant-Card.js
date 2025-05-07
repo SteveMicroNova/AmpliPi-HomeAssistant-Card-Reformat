@@ -651,7 +651,7 @@ class AmplipiGroupCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
         if (this._stream_player) this._stream_player.hass = hass;
         if (this._source_player) this._source_player.hass = hass;
         if (this._helpers && this.source != this._hass.states[this._group].attributes.source) {
-            this._stream_player = this._loadSourcePlayer(this._hass.states[this._group].attributes.source);
+            if (this.source) this._stream_player = this._loadSourcePlayer(this._source, true);
             this._source_player = this._loadAmpliPiSourcePlayer(this._group);
             this._controls_player = this._loadControlsPlayer(this._hass.states[this._group].attributes.source);
         }
@@ -681,7 +681,7 @@ class AmplipiGroupCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
             <b>Source:</b>
             ${this._source_player == undefined ? "" : this._source_player}
             <b>Stream:</b>
-            ${(this._stream_player == undefined || this._stream_player.entity == undefined) ? "" : "Main Group Card"}
+            ${(this._stream_player == undefined || this._stream_player.entity == undefined) ? "" : this._stream_player}
             <hr>
             <b>Zones:</b>
             ${this._zone_players == undefined ? "" : this._zone_players}
@@ -1067,7 +1067,7 @@ class AmplipiZoneCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
         if (this._stream_player) this._stream_player.hass = hass;
         if (this._source_player) this._source_player.hass = hass;
         if (this._helpers && this._hass != undefined && this._hass.states[this._zone] != undefined && this.source != this._hass.states[this._zone].attributes.source) {
-            this._stream_player = this._loadSourcePlayer(this._hass.states[this._zone].attributes.source);
+            if (this.source) this._stream_player = this._loadSourcePlayer(this._source, true);
             this._source_player = this._loadAmpliPiSourcePlayer(this._zone);
             this._controls_player = this._loadControlsPlayer(this._hass.states[this._zone].attributes.source);
         }
@@ -1083,7 +1083,7 @@ class AmplipiZoneCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
             <br><b>Source:</b>
             ${this._source_player == undefined ? "" : this._source_player}
             <b>Stream:</b>
-            ${(this._stream_player == undefined || this._stream_player.entity == undefined) ? "" : "Main Zone Card"}
+            ${(this._stream_player == undefined || this._stream_player.entity == undefined) ? "" : this._stream_player}
             <hr>
             ${(this._controls_player == undefined || this._controls_player.entity == undefined || this._stream_player.entity == undefined) ? "" : this._controls_player}
         </ha-card>`;
@@ -1197,7 +1197,7 @@ class AmplipiSourceCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
             ${this._media_player == undefined ? "..." : this._media_player}
             <br>
             <b>Stream:</b>
-            ${this._source_player == undefined ? "..." : "Main Source Card"}
+            ${this._source_player == undefined ? "..." : this._source_player}
             <hr>
             ${this._zone_players == undefined ? "..." : this._zone_players}
             ${this._controls_player == undefined ? "..." : this._controls_player}
