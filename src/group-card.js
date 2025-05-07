@@ -98,7 +98,7 @@ export class AmplipiGroupCard extends CommonAmplipiCard {
             <b>Source:</b>
             ${this._source_player == undefined ? "" : this._source_player}
             <b>Stream:</b>
-            ${(this._stream_player == undefined || this._stream_player.entity == undefined) ? "" : this._stream_player}
+            ${(this._stream_player == undefined || this._stream_player.entity == undefined) ? "" : "Second Group Card"}
             <hr>
             <b>Zones:</b>
             ${this._zone_players == undefined ? "" : this._zone_players}

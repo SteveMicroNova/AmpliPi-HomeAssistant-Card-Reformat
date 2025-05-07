@@ -54,7 +54,7 @@ export class AmplipiSourceCard extends CommonAmplipiCard {
             ${this._media_player == undefined ? "..." : this._media_player}
             <br>
             <b>Stream:</b>
-            ${this._source_player == undefined ? "..." : this._source_player}
+            ${this._source_player == undefined ? "..." : "Second Source Card"}
             <hr>
             </b>Zones / Groups:</b>
             ${this._zone_players == undefined ? "..." : this._zone_players}

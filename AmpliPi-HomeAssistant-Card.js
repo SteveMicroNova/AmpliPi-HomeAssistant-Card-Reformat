@@ -681,7 +681,7 @@ class AmplipiGroupCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
             <b>Source:</b>
             ${this._source_player == undefined ? "" : this._source_player}
             <b>Stream:</b>
-            ${(this._stream_player == undefined || this._stream_player.entity == undefined) ? "" : this._stream_player}
+            ${(this._stream_player == undefined || this._stream_player.entity == undefined) ? "" : "Main Group Card"}
             <hr>
             <b>Zones:</b>
             ${this._zone_players == undefined ? "" : this._zone_players}
@@ -1083,7 +1083,7 @@ class AmplipiZoneCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
             <br><b>Source:</b>
             ${this._source_player == undefined ? "" : this._source_player}
             <b>Stream:</b>
-            ${(this._stream_player == undefined || this._stream_player.entity == undefined) ? "" : this._stream_player}
+            ${(this._stream_player == undefined || this._stream_player.entity == undefined) ? "" : "Main Zone Card"}
             <hr>
             ${(this._controls_player == undefined || this._controls_player.entity == undefined || this._stream_player.entity == undefined) ? "" : this._controls_player}
         </ha-card>`;
@@ -1197,7 +1197,7 @@ class AmplipiSourceCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
             ${this._media_player == undefined ? "..." : this._media_player}
             <br>
             <b>Stream:</b>
-            ${this._source_player == undefined ? "..." : this._source_player}
+            ${this._source_player == undefined ? "..." : "Main Source Card"}
             <hr>
             ${this._zone_players == undefined ? "..." : this._zone_players}
             ${this._controls_player == undefined ? "..." : this._controls_player}
