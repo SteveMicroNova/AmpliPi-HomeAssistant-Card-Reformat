@@ -651,7 +651,7 @@ class AmplipiGroupCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
         if (this._stream_player) this._stream_player.hass = hass;
         if (this._source_player) this._source_player.hass = hass;
         if (this._helpers && this.source != this._hass.states[this._group].attributes.source) {
-            if (this.source) this._stream_player = this._loadSourcePlayer(this._source, true);
+            if (this.source) {this._stream_player = this._loadSourcePlayer(this._source, true)} else {this._stream_player = null};
             this._source_player = this._loadAmpliPiSourcePlayer(this._group);
             this._controls_player = this._loadControlsPlayer(this._hass.states[this._group].attributes.source);
         }
@@ -1067,7 +1067,7 @@ class AmplipiZoneCard extends (0, _commonAmplipiCard.CommonAmplipiCard) {
         if (this._stream_player) this._stream_player.hass = hass;
         if (this._source_player) this._source_player.hass = hass;
         if (this._helpers && this._hass != undefined && this._hass.states[this._zone] != undefined && this.source != this._hass.states[this._zone].attributes.source) {
-            if (this.source) this._stream_player = this._loadSourcePlayer(this._source, true);
+            if (this.source) {this._stream_player = this._loadSourcePlayer(this._source, true)} else {this._stream_player = null};
             this._source_player = this._loadAmpliPiSourcePlayer(this._zone);
             this._controls_player = this._loadControlsPlayer(this._hass.states[this._zone].attributes.source);
         }
