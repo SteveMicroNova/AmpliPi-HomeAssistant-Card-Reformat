@@ -1082,8 +1082,8 @@
               <br><b>Source:</b>
               ${this._source_player == undefined ? "" : this._source_player}
               <br><b>SOURCE BITS:</b>
-              ${this._source_player == undefined ? "NULL" : this._source_player.source}
-              <b>Stream:</b>
+              ${this._source_player == undefined ? "NULL" : Object.entries(obj).map(([k, v]) => `${k}: ${v}`).join(', ')}
+              <br><b>Stream:</b>
               ${this._stream_player == undefined ? "" : this._stream_player}
               <hr>
               ${this._controls_player == undefined ? "" : this._controls_player}
