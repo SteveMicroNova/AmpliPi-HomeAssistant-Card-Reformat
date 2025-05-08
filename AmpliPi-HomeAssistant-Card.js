@@ -850,8 +850,10 @@
           var source_id;
           if (!is_source) {
               const source_num = source.split(" ")[1] - 1;
-              for (var [name, entity] of Object.entries(this._hass.states))if (entity.attributes.amplipi_source_id !== undefined && entity.attributes.amplipi_source_id === source_num) source_id = name;
+              for (var [name, entity] of Object.entries(this._hass.states))
+              if (entity.attributes.amplipi_source_id !== undefined && entity.attributes.amplipi_source_id === source_num) source_id = name;
           } else source_id = source;
+
           let source_player_config1 = {
               "type": "custom:mini-media-player",
               "entity": source_id,
@@ -1193,8 +1195,9 @@
           <b>Now Playing:</b> ${this._hass.states[this._source].attributes.media_album_artist} - ${this._hass.states[this._source].attributes.media_track}
               ${this._media_player == undefined ? "..." : this._media_player}
               <br>
-              <b>Stream:</b>
+              <b>Steam:</b>
               ${this._source_player == undefined ? "..." : this._source_player}
+              ${this._source == undefined ? "UNDEF" : this._source}
               <hr>
               ${this._zone_players == undefined ? "..." : this._zone_players}
               ${this._controls_player == undefined ? "..." : this._controls_player}
