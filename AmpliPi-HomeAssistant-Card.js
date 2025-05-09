@@ -851,10 +851,9 @@
           var source_id;
           if (!is_source) {
               const source_num = source.split(" ")[1] - 1;
-              console.log(this._hass.states)
               for (var [name, entity] of Object.entries(this._hass.states)){
                 if (entity.attributes.amplipi_source_id !== undefined && entity.attributes.amplipi_source_id === source_num) {
-                    console.log(`Match found!: ${name}, ${source}`)
+                    console.log(`Match found!: ${name}, ${source}, ${source_num}`)
                     source_id = name;
                 }
             }
