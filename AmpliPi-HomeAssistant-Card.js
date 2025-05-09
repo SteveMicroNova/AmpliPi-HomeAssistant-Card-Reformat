@@ -854,7 +854,7 @@
               console.log(this._hass.states)
               for (var [name, entity] of Object.entries(this._hass.states)){
                 if (entity.attributes.amplipi_source_id !== undefined && entity.attributes.amplipi_source_id === source_num) {
-                    console.log(`Match found!: ${name}, ${entity}`)
+                    console.log(`Match found!: ${name}, ${source}`)
                     source_id = name;
                 }
             }
