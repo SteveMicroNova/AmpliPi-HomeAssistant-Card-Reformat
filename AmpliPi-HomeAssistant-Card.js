@@ -851,10 +851,8 @@
           var source_id;
           if (!is_source) {
               const source_num = source.split(" ")[1] - 1;
-              for (var [name, entity] of Object.entries(this._hass.states))
-              if (entity.attributes.amplipi_source_id !== undefined && entity.attributes.amplipi_source_id === source_num) source_id = entity.id;
+              for (var [name, entity] of Object.entries(this._hass.states))if (entity.attributes.amplipi_source_id !== undefined && entity.attributes.amplipi_source_id === source_num) source_id = entity.id;
           } else source_id = source;
-
           let source_player_config1 = {
               "type": "custom:mini-media-player",
               "entity": source_id,
@@ -1080,17 +1078,12 @@
           <ha-card header="${this._config.name}" style="padding: 1.5rem;">
           <b>Now Playing:</b> ${this._hass.states[this._zone].attributes.media_album_artist} - ${this._hass.states[this._zone].attributes.media_track}
               ${this._media_player == undefined ? "" : this._media_player}
-              <br>
-              <b>Source:</b>
-              <br>
+              <br><b>Source:</b>
               ${this._source_player == undefined ? "" : this._source_player}
-              <br>
               <b>Stream:</b>
-              <br>
               ${this._stream_player == undefined ? "" : this._stream_player}
-              <br>
-              stream_player basis:
-              ${this._hass.states[this._zone].attributes.source}
+              <hr>
+              ${this._controls_player == undefined ? "" : this._controls_player}
           </ha-card>`;
       }
       async addMediaPlayer() {
@@ -1201,7 +1194,7 @@
           <b>Now Playing:</b> ${this._hass.states[this._source].attributes.media_album_artist} - ${this._hass.states[this._source].attributes.media_track}
               ${this._media_player == undefined ? "..." : this._media_player}
               <br>
-              <b>Steam:</b>
+              <b>Stream:</b>
               ${this._source_player == undefined ? "..." : this._source_player}
               <br>
               ${this._source_player == undefined ? "UNDEF" : Object.entries(this._source_player).map(([k, v]) => `${k}: ${v}`).join('\n<br>')}
