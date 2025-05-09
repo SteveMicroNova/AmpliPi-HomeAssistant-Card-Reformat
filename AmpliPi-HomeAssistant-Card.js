@@ -857,7 +857,7 @@
 
           let source_player_config1 = {
               "type": "custom:mini-media-player",
-              "entity": source_id,
+              "entity": "media_player.amplipi_source_source_" + source_id,
               "group": "true",
               "source": "full",
               "hide": {
