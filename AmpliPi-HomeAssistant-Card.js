@@ -1080,9 +1080,12 @@
           <ha-card header="${this._config.name}" style="padding: 1.5rem;">
           <b>Now Playing:</b> ${this._hass.states[this._zone].attributes.media_album_artist} - ${this._hass.states[this._zone].attributes.media_track}
               ${this._media_player == undefined ? "" : this._media_player}
-              <br><b>Source:</b>
+              <br>
+              <b>Source:</b>
+              <br>
               ${this._source_player == undefined ? "" : this._source_player}
-              <br><b>SOURCE BITS:</b>
+              <br>
+              <b>SOURCE BITS:</b>
               <br>
               ${this._source_player == undefined ? "UNDEF" : Object.entries(this._source_player).map(([k, v]) => `${k}: ${v}`).join('\n')}
               <br>
@@ -1097,8 +1100,25 @@
               Player:
               <br>
               ${this._source_player == undefined || this._source_player._player == undefined ? "UNDEF" : Object.entries(this._source_player._player).map(([k, v]) => `${k}: ${v}`).join('\n')}
-              <br><b>Stream:</b>
+              <br>
+              <b>Stream:</b>
+              <br>
               ${this._stream_player == undefined ? "" : this._stream_player}
+              <br>
+              ${this._stream_player == undefined ? "UNDEF" : Object.entries(this._stream_player).map(([k, v]) => `${k}: ${v}`).join('\n')}
+              <br>
+              Hass:
+              <br>
+              ${this._stream_player == undefined || this._stream_player._hass == undefined ? "UNDEF" : Object.entries(this._stream_player._hass).map(([k, v]) => `${k}: ${v}`).join('\n')}
+              <br>
+              Entity:
+              <br>
+              ${this._stream_player == undefined || this._stream_player._entity == undefined ? "UNDEF" : Object.entries(this._stream_player._entity).map(([k, v]) => `${k}: ${v}`).join('\n')}
+              <br>
+              Player:
+              <br>
+              ${this._stream_player == undefined || this._stream_player._player == undefined ? "UNDEF" : Object.entries(this._stream_player._player).map(([k, v]) => `${k}: ${v}`).join('\n')}
+              <br>
               <hr>
               ${this._controls_player == undefined ? "" : this._controls_player}
           </ha-card>`;
