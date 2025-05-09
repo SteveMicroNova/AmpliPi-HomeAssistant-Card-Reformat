@@ -678,7 +678,7 @@
               <br>
               <b>Source:</b>
               ${this._source_player == undefined ? "" : this._source_player}
-              ${this._source_player == undefined ? "UNDEF" : Object.entries(this._source_player).map(([k, v]) => `${k}: ${v}`).join('\n')}
+              ${this._source_player == undefined ? "UNDEF" : Object.entries(this._source_player).map(([k, v]) => `${k}: ${v}`).join('\n<br>')}
               <b>Stream:</b>
               ${this._stream_player == undefined ? "" : this._stream_player}
               <hr>
@@ -1083,7 +1083,7 @@
               <br><b>Source:</b>
               ${this._source_player == undefined ? "" : this._source_player}
               <br><b>SOURCE BITS:</b>
-              ${this._source_player == undefined ? "UNDEF" : Object.entries(this._source_player).map(([k, v]) => `${k}: ${v}`).join('\n')}
+              ${this._source_player == undefined ? "UNDEF" : Object.entries(this._source_player).map(([k, v]) => `${k}: ${v}`).join('\n<br>')}
               <br><b>Stream:</b>
               ${this._stream_player == undefined ? "" : this._stream_player}
               <hr>
@@ -1201,7 +1201,7 @@
               <b>Steam:</b>
               ${this._source_player == undefined ? "..." : this._source_player}
               <br>
-              ${this._source_player == undefined ? "UNDEF" : Object.entries(this._source_player).map(([k, v]) => `${k}: ${v}`).join('\n')}
+              ${this._source_player == undefined ? "UNDEF" : Object.entries(this._source_player).map(([k, v]) => `${k}: ${v}`).join('\n<br>')}
               <br>
               ${this._source == undefined ? "UNDEF" : this._source}
               <hr>
