@@ -1084,15 +1084,19 @@
               ${this._source_player == undefined ? "" : this._source_player}
               <br><b>SOURCE BITS:</b>
               <br>
-              ${this._source_player == undefined ? "UNDEF" : Object.entries(this._source_player).map(([k, v]) => `${k}: ${v}`).join('\n<br>')}
+              ${this._source_player == undefined ? "UNDEF" : Object.entries(this._source_player).map(([k, v]) => `${k}: ${v}`).join('\n')}
               <br>
               Hass:
               <br>
-              ${this._source_player == undefined || this._source_player._hass == undefined ? "UNDEF" : Object.entries(this._source_player._hass).map(([k, v]) => `${k}: ${v}`).join('\n<br>')}
+              ${this._source_player == undefined || this._source_player._hass == undefined ? "UNDEF" : Object.entries(this._source_player._hass).map(([k, v]) => `${k}: ${v}`).join('\n')}
+              <br>
+              Entity:
+              <br>
+              ${this._source_player == undefined || this._source_player._entity == undefined ? "UNDEF" : Object.entries(this._source_player._entity).map(([k, v]) => `${k}: ${v}`).join('\n')}
               <br>
               Player:
               <br>
-              ${this._source_player == undefined || this._source_player._player == undefined ? "UNDEF" : Object.entries(this._source_player._player).map(([k, v]) => `${k}: ${v}`).join('\n<br>')}
+              ${this._source_player == undefined || this._source_player._player == undefined ? "UNDEF" : Object.entries(this._source_player._player).map(([k, v]) => `${k}: ${v}`).join('\n')}
               <br><b>Stream:</b>
               ${this._stream_player == undefined ? "" : this._stream_player}
               <hr>
