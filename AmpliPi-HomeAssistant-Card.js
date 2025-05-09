@@ -850,10 +850,33 @@
           if (source === undefined) return undefined;
           var source_id;
           if (!is_source) {
-            console.log("returning entity!")
               const source_num = source.split(" ")[1] - 1;
-              for (var [name, entity] of Object.entries(this._hass.states))if (entity.attributes.amplipi_source_id !== undefined && entity.attributes.amplipi_source_id === source_num) return entity
-          }
+              print(this._hass.states)
+              for (var [name, entity] of Object.entries(this._hass.states))if (entity.attributes.amplipi_source_id !== undefined && entity.attributes.amplipi_source_id === source_num) source_id = name;
+          } else source_id = source;
+          let source_player_config1 = {
+              "type": "custom:mini-media-player",
+              "entity": source_id,
+              "group": "true",
+              "source": "full",
+              "hide": {
+                  "volume": "true",
+                  "controls": "true",
+                  "info": "true",
+                  "name": "true",
+                  "power": "true",
+                  "icon": "true"
+              }
+          };
+          if (this._config.media_config instanceof Object) source_player_config1 = {
+              ...source_player_config1,
+              ...this._config.media_config
+          };
+          var player;
+          player = this._helpers.createCardElement(source_player_config1);
+          player.hass = this._hass;
+          this.triggerRender();
+          return player;
       }
       _loadControlsPlayer(source, is_source = false) {
           if (source === undefined) {
