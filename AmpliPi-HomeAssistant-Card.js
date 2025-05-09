@@ -852,7 +852,12 @@
           if (!is_source) {
               const source_num = source.split(" ")[1] - 1;
               console.log(this._hass.states)
-              for (var [name, entity] of Object.entries(this._hass.states))if (entity.attributes.amplipi_source_id !== undefined && entity.attributes.amplipi_source_id === source_num) source_id = name;
+              for (var [name, entity] of Object.entries(this._hass.states)){
+                if (entity.attributes.amplipi_source_id !== undefined && entity.attributes.amplipi_source_id === source_num) {
+                    console.log(`Match found!: ${name}, ${entity}`)
+                    source_id = name;
+                }
+            }
           } else source_id = source;
           let source_player_config1 = {
               "type": "custom:mini-media-player",
