@@ -852,12 +852,12 @@
           if (!is_source) {
               const source_num = source.split(" ")[1] - 1;
               for (var [name, entity] of Object.entries(this._hass.states))
-              if (entity.attributes.amplipi_source_id !== undefined && entity.attributes.amplipi_source_id === source_num) source_id = name;
+              if (entity.attributes.amplipi_source_id !== undefined && entity.attributes.amplipi_source_id === source_num) source_id = entity.id;
           } else source_id = source;
 
           let source_player_config1 = {
               "type": "custom:mini-media-player",
-              "entity": "media_player.amplipi_source_source_" + source_id,
+              "entity": source_id,
               "group": "true",
               "source": "full",
               "hide": {
@@ -1085,37 +1085,12 @@
               <br>
               ${this._source_player == undefined ? "" : this._source_player}
               <br>
-              <b>SOURCE BITS:</b>
-              <br>
-              ${this._source_player == undefined ? "UNDEF" : Object.entries(this._source_player).map(([k, v]) => `${k}: ${v}`).join('\n')}
-              <br>
-              Entity:
-              <br>
-              ${this._source_player == undefined || this._source_player._entity == undefined ? "UNDEF" : Object.entries(this._source_player._entity).map(([k, v]) => `${k}: ${v}`).join('\n')}
-              <br>
-              Player:
-              <br>
-              ${this._source_player == undefined || this._source_player._player == undefined ? "UNDEF" : Object.entries(this._source_player._player).map(([k, v]) => `${k}: ${v}`).join('\n')}
-              <br>
               <b>Stream:</b>
               <br>
               ${this._stream_player == undefined ? "" : this._stream_player}
               <br>
-              ${this._stream_player == undefined ? "UNDEF" : Object.entries(this._stream_player).map(([k, v]) => `${k}: ${v}`).join('\n')}
-              <br>
               stream_player basis:
               ${this._hass.states[this._zone].attributes.source}
-              <br>
-              Entity:
-              <br>
-              ${this._stream_player == undefined || this._stream_player._entity == undefined ? "UNDEF" : Object.entries(this._stream_player._entity).map(([k, v]) => `${k}: ${v}`).join('\n')}
-              <br>
-              Player:
-              <br>
-              ${this._stream_player == undefined || this._stream_player._player == undefined ? "UNDEF" : Object.entries(this._stream_player._player).map(([k, v]) => `${k}: ${v}`).join('\n')}
-              <br>
-              <hr>
-              ${this._controls_player == undefined ? "" : this._controls_player}
           </ha-card>`;
       }
       async addMediaPlayer() {
