@@ -851,7 +851,7 @@
           var source_id;
           if (!is_source) {
               const source_num = source.split(" ")[1] - 1;
-              for (var [name, entity] of Object.entries(this._hass.states))if (entity.attributes.amplipi_source_id !== undefined && entity.attributes.amplipi_source_id === source_num) source_id = entity.attributes.id;
+              for (var [name, entity] of Object.entries(this._hass.states))if (entity.attributes.amplipi_source_id !== undefined && entity.attributes.amplipi_source_id === source_num) return entity
           } else source_id = source;
           let source_player_config1 = {
               "type": "custom:mini-media-player",
@@ -1082,6 +1082,7 @@
               ${this._source_player == undefined ? "" : this._source_player}
               <b>Stream:</b>
               ${this._stream_player == undefined ? "" : this._stream_player}
+              ${this._stream_player == undefined ? "UNDEF" : Object.entries(this._source_player).map(([k, v]) => `${k}: ${v}`).join('\n<br>')}
               <hr>
               ${this._controls_player == undefined ? "" : this._controls_player}
           </ha-card>`;
