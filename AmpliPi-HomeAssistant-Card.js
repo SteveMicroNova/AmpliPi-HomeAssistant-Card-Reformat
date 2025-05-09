@@ -678,7 +678,6 @@
               <br>
               <b>Source:</b>
               ${this._source_player == undefined ? "" : this._source_player}
-              ${this._source_player == undefined ? "UNDEF" : Object.entries(this._source_player).map(([k, v]) => `${k}: ${v}`).join('\n<br>')}
               <b>Stream:</b>
               ${this._stream_player == undefined ? "" : this._stream_player}
               <hr>
@@ -851,12 +850,7 @@
           var source_id;
           if (!is_source) {
               const source_num = source.split(" ")[1] - 1;
-              for (var [name, entity] of Object.entries(this._hass.states)){
-                if (entity.attributes.device_class == "receiver" && entity.attributes.amplipi_source_id !== undefined && entity.attributes.amplipi_source_id === source_num) {
-                    console.log(`Match found!:\n${name}, ${source}\n${entity.attributes.amplipi_source_id} == ${source_num}`)
-                    source_id = name;
-                }
-            }
+              for (var [name, entity] of Object.entries(this._hass.states))if (entity.attributes.device_class == "receiver" && entity.attributes.amplipi_source_id !== undefined && entity.attributes.amplipi_source_id === source_num) source_id = name;
           } else source_id = source;
           let source_player_config1 = {
               "type": "custom:mini-media-player",
@@ -1088,10 +1082,6 @@
               <b>Stream:</b>
               ${this._stream_player == undefined ? "" : this._stream_player}
               <hr>
-              ${this._stream_player == undefined ? "UNDEF" : Object.entries(this._source_player).map(([k, v]) => `${k}: ${v}`).join('\n<br>')}
-              <hr>
-              ${this._stream_player == undefined || this._source_player.attributes == undefined ? "UNDEF" : Object.entries(this._source_player.attributes).map(([k, v]) => `${k}: ${v}`).join('\n<br>')}
-              <hr>
               ${this._controls_player == undefined ? "" : this._controls_player}
           </ha-card>`;
       }
@@ -1205,10 +1195,6 @@
               <br>
               <b>Stream:</b>
               ${this._source_player == undefined ? "..." : this._source_player}
-              <br>
-              ${this._source_player == undefined ? "UNDEF" : Object.entries(this._source_player).map(([k, v]) => `${k}: ${v}`).join('\n<br>')}
-              <br>
-              ${this._source == undefined ? "UNDEF" : this._source}
               <hr>
               ${this._zone_players == undefined ? "..." : this._zone_players}
               ${this._controls_player == undefined ? "..." : this._controls_player}
