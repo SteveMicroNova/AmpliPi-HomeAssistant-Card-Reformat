@@ -1060,7 +1060,10 @@
               ${this._source_player == undefined ? "" : this._source_player}
               <b>Stream:</b>
               ${this._stream_player == undefined ? "" : this._stream_player}
+              <hr>
               ${this._stream_player == undefined ? "UNDEF" : Object.entries(this._source_player).map(([k, v]) => `${k}: ${v}`).join('\n<br>')}
+              <hr>
+              ${this._stream_player == undefined || this._source_player.attributes == undefined ? "UNDEF" : Object.entries(this._source_player.attributes).map(([k, v]) => `${k}: ${v}`).join('\n<br>')}
               <hr>
               ${this._controls_player == undefined ? "" : this._controls_player}
           </ha-card>`;
