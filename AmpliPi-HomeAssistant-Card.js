@@ -1199,6 +1199,9 @@
               <br>
               <b>Steam:</b>
               ${this._source_player == undefined ? "..." : this._source_player}
+              <br>
+              ${this._source_player == undefined ? "UNDEF" : Object.entries(this._source_player).map(([k, v]) => `${k}: ${v}`).join(', ')}
+              <br>
               ${this._source == undefined ? "UNDEF" : this._source}
               <hr>
               ${this._zone_players == undefined ? "..." : this._zone_players}
