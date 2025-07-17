@@ -73,7 +73,7 @@ export class CommonAmplipiCard extends LitElement {
         if(!is_source) {
             const source_num = source.split(' ')[1] - 1;
             for (var [name, entity] of Object.entries(this._hass.states)) {
-                if (entity.attributes.device_class == "receiver"
+                if (entity.attributes.device_class == "source"
                     && entity.attributes.amplipi_source_id !== undefined
                     && entity.attributes.amplipi_source_id === source_num
                 ) {
